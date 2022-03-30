@@ -1,6 +1,5 @@
 ﻿@page "/"
 @inherits LayoutComponentBase
-@inject HttpClient Http;
 @inject IHeroService HeroService;
 
 <PageTitle>Heroes</PageTitle>
@@ -37,6 +36,8 @@ else
                                     <MudIconButton Icon="@Icons.Material.Filled.Delete" DisableElevation="true" DisableRipple="true"
                                            OnClick="(() => DeleteHero(hero.ID))" Class="delete-icon" />
                                     <div class="textcard">
+                                        <MudText Class="info" Typo="Typo.h5">@hero.ComicID comic</MudText>
+                                        <MudText Class="info" Typo="Typo.h5">@hero.ID</MudText>
                                         <MudText Class="info" Typo="Typo.h5">@hero.HeroName</MudText>
                                         <MudText Class="info" Typo="Typo.h6">@hero.AlterEgo</MudText>
                                         <p class="info">@hero.Info</p>
@@ -81,13 +82,13 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        await HeroService.GetHero();
-        await HeroService.GetComic();
+        HeroService.GetList();
+        HeroService.GetComicList();
     }
 
     protected async Task PostHero(Hero hero)
     {
-        await HeroService.PostHero(hero);
+        HeroService.AddHero(hero);
         await OnInitializedAsync();
     }
 
@@ -101,7 +102,7 @@ else
         switch (result)
         {
             case true:
-                await HeroService.DeleteHero(ID);
+                HeroService.RemoveHero(ID);
                 await OnInitializedAsync();
                 break;
             case null:
@@ -112,6 +113,4 @@ else
                 break;
         }
     }
-
-   
 }

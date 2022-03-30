@@ -8,9 +8,12 @@ namespace Heroes.FrontEnd.Services
         List<Hero> Heroes { get; set; }
         Hero Hero { get; set; }
         List<Comic>? Comics { get; set; }
-        Task GetComic();
-        Task GetHero();
-        Task PostHero(Hero hero);
-        Task DeleteHero(int ID);
+        
+        List<Hero> GetList();
+        List<Comic> GetComicList();
+        void AddHero(Hero hero);
+        void RemoveHero(int ID);
+
+        
     }
 }

@@ -1,29 +1,35 @@
 ﻿using Heroes.FrontEnd.DTOs;
-using System.Net.Http.Json;
 
 namespace Heroes.FrontEnd.Services
 {
-    public class HeroService : IHeroService
-    {
-        private readonly HttpClient Http;
-
-        public HeroService(HttpClient? http)
-        {
-            Http = http;
-        }
-        public List<Hero>? Heroes { get; set; }
+    public partial class HeroService : IHeroService
+    {             
         public Hero Hero { get; set; } = new() { ComicID = 2 };
-        public List<Comic>? Comics { get; set; }
 
+        public List<Hero> GetList() => Heroes;
 
-        //consuming web API from: https://github.com/GabrielGonMorais/SuperHeroes.API
-        public async Task DeleteHero(int ID) => await Http.DeleteAsync($"https://localhost:7299/Hero/{ID}");
-        public async Task GetComic() => Comics = await Http.GetFromJsonAsync<List<Comic>>("https://localhost:7299/Comics");
-        public async Task GetHero() => Heroes = await Http.GetFromJsonAsync<List<Hero>>("https://localhost:7299/Heroes");
+        public List<Comic> GetComicList() => Comics;
 
-        public async Task PostHero(Hero hero)
+        public void RemoveHero(int ID)
         {
-            await Http.PostAsJsonAsync("https://localhost:7299/Hero", hero);
+            Heroes.Remove(Heroes.Find((Hero)=> Hero.ID == ID));
+        }
+
+        public void AddHero(Hero hero)
+        {
+            hero.ID = Heroes.Count;
+
+            switch (hero.ComicID)
+            {
+                case 1:
+                    hero.Comic = DC;
+                    break;
+                case 2:
+                    hero.Comic = Marvel;
+                    break;
+            };
+
+            Heroes.Add(hero);
             Hero = new Hero() { ComicID = 2 };
         }
     }
