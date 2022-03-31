@@ -1,0 +1,85 @@
+﻿
+.mt-16 {
+    margin: 50px 50px 50px;
+    height: auto;
+    width: auto;
+}
+
+.card {
+    border-radius: 7px;
+    height: 370px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    opacity: 0.7;
+}
+
+    .card:hover {
+        z-index: 2;
+        transform: scale(1.3);
+        opacity: 1;
+    }
+
+.shader {
+    border-radius: 7px;
+    background: linear-gradient( hsl(0 0% 0%/0), hsl(20 0% 0% / 0.3) 20%, hsl(0 0% 0%/1) );
+    width: auto;
+    height: 370px;
+}
+
+.textcard {
+    position: absolute;
+    bottom: 0;
+    padding: 0 0 15px 15px;
+    transform: translateX(-65%);
+    transition: 0.6s;
+}
+
+.info {
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.form {
+    margin: 5px 20px 20px;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.cmc-icon {
+    transition: 0.4s;
+    padding: 0px 0 13px 13px;
+    position: absolute;
+    bottom: 0;
+}
+
+.delete-icon {
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px 2px 2px #222);
+    opacity: 0;
+    position: absolute;
+    transition: 0.4s;
+}
+
+.card:hover .textcard {
+    transform: translateX(0);
+}
+
+.card:hover .info {
+    opacity: 1;
+}
+
+.card:hover .form {
+    opacity: 1;
+}
+
+.card:hover .cmc-icon {
+    opacity: 0;
+    transform: translateY(0);
+}
+
+.card:hover .delete-icon {
+    opacity: 1;
+}
