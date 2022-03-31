@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Heroes.FrontEnd.dll": "sha256-E6PXyvSjS44WPThXXFOBNkjVl0TSiSXicR7JOczkihk=",
+      "Heroes.FrontEnd.dll": "sha256-ppYk+vYB63pTWr70lVvDN4jjiHpxGaCJMpdQUZyIMfY=",
       "Microsoft.AspNetCore.Components.dll": "sha256-eD8rgfrAUmnsK+z0OyDK5GDlvhJcaPT\/jXEhCYrrDQc=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-yrKDQgsO41B2w2CV9rIPO1tHfTszxMwP5NO22ca3aKk=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-MTRqLZ95uMicM639AfZUWYoj5rZVdMn\/kqNxkE4FefA=",
