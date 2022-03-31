@@ -6,4 +6,8 @@ Front-End superheroes's gallery, consuming SuperHeroes.API (https://github.com/G
 I used mudblazor library for some UI components, but, wrote pure css to overcome some limitations
 
 ### Demo Page
-This demo page uses the code repository. Original project uses API/database.
+This demo page uses the code repository. Original project uses API/database.</br>
+
+
+# Dependencies
+"MudBlazor" Version="6.0.6"
