@@ -18,8 +18,5 @@ namespace Heroes.FrontEnd.Services
         static Comic DC = new Comic() { ID = 1, Name = "DC" };
         static Comic Marvel = new Comic() { ID = 2, Name = "Marvel"};
         public List<Comic>? Comics { get; set; }= new List<Comic>() { DC, Marvel };
-
-
-
     }
 }
